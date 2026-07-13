@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="VOBEzb6OSQVLbPcr_aVEa8ytLKZaFJJkn7qV_7f1aww" />
 <title>Washu Tic Tac Toe Pro — Outsmart the Grid</title>
+<meta name="description" content="Washu Tic Tac Toe Pro is the ultimate online tic-tac-toe game. Challenge yourself with intelligent AI or play against friends. Fast, free, and competitive.">
 <style>
   :root{
     --bg: #0B0E14;
@@ -35,191 +36,55 @@
   img{max-width:100%; display:block;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-  }
-
   /* NAV */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(11,14,20,0.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 24px; max-width:var(--max); margin:0 auto;
-  }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:18px;
-  }
-  .brand-mark{
-    width:28px; height:28px; border-radius:7px;
-    background:linear-gradient(135deg, var(--gold), var(--violet));
-    display:grid; place-items:center; font-size:14px; color:#0B0E14; font-weight:800;
-  }
-  .nav-cta{
-    background:var(--gold); color:#1A1200; padding:9px 18px; border-radius:8px;
-    font-weight:700; font-size:14px;
-  }
+  header{position:sticky; top:0; z-index:50; background:rgba(11,14,20,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:var(--max); margin:0 auto;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:18px;}
+  .brand-mark{width:28px; height:28px; border-radius:7px; background:linear-gradient(135deg, var(--gold), var(--violet)); display:grid; place-items:center; font-size:14px; color:#0B0E14; font-weight:800;}
+  .nav-cta{background:var(--gold); color:#1A1200; padding:9px 18px; border-radius:8px; font-weight:700; font-size:14px;}
 
   /* HERO */
-  .hero{
-    padding:72px 24px 56px;
-    max-width:var(--max); margin:0 auto;
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
-  }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    color:var(--gold); font-size:13px; font-weight:600; letter-spacing:0.08em;
-    text-transform:uppercase; margin-bottom:18px;
-  }
+  .hero{padding:72px 24px 56px; max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; color:var(--gold); font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:18px;}
   .eyebrow::before{content:''; width:6px; height:6px; border-radius:50%; background:var(--gold);}
-  .hero h1{
-    font-size:clamp(36px, 5.2vw, 58px);
-    line-height:1.05;
-    margin-bottom:20px;
-  }
-  .hero h1 .hl{
-    background:linear-gradient(120deg, var(--gold), #f4d18a);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .hero p.tagline{
-    font-size:19px; color:var(--muted); max-width:46ch; margin-bottom:34px;
-  }
+  .hero h1{font-size:clamp(36px, 5.2vw, 58px); line-height:1.05; margin-bottom:20px;}
+  .hero h1 .hl{background:linear-gradient(120deg, var(--gold), #f4d18a); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .hero p.tagline{font-size:19px; color:var(--muted); max-width:46ch; margin-bottom:34px;}
   .cta-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
-  .btn-primary{
-    background:var(--gold); color:#1A1200;
-    padding:16px 30px; border-radius:10px; font-weight:700; font-size:16px;
-    box-shadow:0 8px 24px rgba(232,179,76,0.25);
-    transition:transform 0.15s ease, box-shadow 0.15s ease;
-    display:inline-flex; align-items:center; gap:10px;
-  }
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(232,179,76,0.35);}
-  .btn-primary:focus-visible{outline:3px solid var(--violet); outline-offset:3px;}
-  .btn-secondary{
-    color:var(--text); border:1px solid var(--line); padding:15px 26px; border-radius:10px;
-    font-weight:600; font-size:15px;
-  }
-  .btn-secondary:hover{border-color:var(--violet);}
+  .btn-primary{background:var(--gold); color:#1A1200; padding:16px 30px; border-radius:10px; font-weight:700; font-size:16px; transition:transform 0.15s ease;}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-secondary{color:var(--text); border:1px solid var(--line); padding:15px 26px; border-radius:10px; font-weight:600;}
   .store-note{font-size:13px; color:var(--muted); margin-top:14px;}
 
-  /* Animated board (signature element) */
-  .board-stage{
-    display:flex; justify-content:center; align-items:center;
-  }
-  .board-card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:28px;
-    box-shadow:0 30px 60px rgba(0,0,0,0.45);
-    width:100%; max-width:340px;
-  }
-  .board{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
-    aspect-ratio:1/1; position:relative;
-  }
-  .cell{
-    background:var(--panel-2);
-    border-radius:12px;
-    display:grid; place-items:center;
-    font-family:'Space Grotesk', sans-serif;
-    font-size:clamp(28px, 6vw, 40px);
-    font-weight:700;
-    position:relative;
-  }
-  .cell .mark{opacity:0; transform:scale(0.5); transition:opacity 0.25s ease, transform 0.25s ease;}
-  .cell .mark.show{opacity:1; transform:scale(1);}
-  .cell .mark.x{color:var(--violet);}
-  .cell .mark.o{color:var(--gold);}
-  .board-caption{
-    text-align:center; color:var(--muted); font-size:13px; margin-top:16px;
-  }
-  .board-caption b{color:var(--gold);}
+  /* Board */
+  .board-stage{display:flex; justify-content:center; align-items:center;}
+  .board-card{background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:28px; width:100%; max-width:340px;}
+  .board{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; aspect-ratio:1/1;}
+  .cell{background:var(--panel-2); border-radius:12px; display:grid; place-items:center; font-family:'Space Grotesk', sans-serif; font-size:40px; font-weight:700;}
+  .mark{opacity:0; transition:opacity 0.25s;}
+  .mark.show{opacity:1;}
+  .mark.x{color:var(--violet);} .mark.o{color:var(--gold);}
+  .board-caption{text-align:center; color:var(--muted); font-size:13px; margin-top:16px;}
 
-  /* Sections */
+  /* Features & Gallery */
   section{padding:80px 24px;}
   .section-head{max-width:640px; margin:0 auto 48px; text-align:center;}
-  .section-head .eyebrow{display:flex; justify-content:center;}
-  .section-head h2{font-size:clamp(28px,3.6vw,38px); margin-bottom:12px;}
-  .section-head p{color:var(--muted); font-size:16px;}
-
-  /* Features */
-  .features{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .feature-grid{
-    max-width:var(--max); margin:0 auto;
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-  }
-  .feature{
-    background:var(--panel-2); border:1px solid var(--line); border-radius:16px; padding:28px;
-  }
-  .feature .num{
-    font-family:'Space Grotesk', sans-serif; font-size:13px; font-weight:700;
-    color:var(--gold); margin-bottom:14px; letter-spacing:0.06em;
-  }
-  .feature h3{font-size:19px; margin-bottom:10px;}
-  .feature p{color:var(--muted); font-size:15px;}
-
-  /* About */
-  .about{max-width:760px; margin:0 auto; text-align:center;}
-  .about p{font-size:19px; color:#C7CCD9; margin-bottom:16px;}
-
-  /* Gallery */
-  .gallery-grid{
-    max-width:var(--max); margin:0 auto;
-    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
-  }
-  .shot{
-    aspect-ratio:9/16;
-    background:linear-gradient(160deg, var(--panel-2), var(--panel));
-    border:1px solid var(--line); border-radius:18px;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:10px; color:var(--muted); font-size:14px;
-  }
-  .shot .ph-icon{
-    width:44px; height:44px; border-radius:10px; border:2px dashed var(--line);
-    display:grid; place-items:center; font-size:20px; color:var(--gold);
-  }
+  .feature-grid{max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .feature{background:var(--panel-2); border:1px solid var(--line); border-radius:16px; padding:28px;}
+  
+  .gallery-grid{max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .shot{aspect-ratio:9/16; border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .shot img{width:100%; height:100%; object-fit:cover;}
 
   /* Footer */
   footer{background:var(--panel); border-top:1px solid var(--line); padding:56px 24px 32px;}
-  .footer-grid{
-    max-width:var(--max); margin:0 auto;
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; margin-bottom:32px;
-  }
-  .footer-brand p{color:var(--muted); font-size:14px; max-width:32ch; margin-top:10px;}
-  .footer-links{display:flex; gap:40px; flex-wrap:wrap;}
-  .footer-col h4{font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:14px;}
-  .footer-col a{display:block; font-size:15px; margin-bottom:10px; color:var(--text);}
-  .footer-col a:hover{color:var(--gold);}
-  .footer-bottom{
-    max-width:var(--max); margin:0 auto; padding-top:24px; border-top:1px solid var(--line);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-    color:var(--muted); font-size:13px;
-  }
-
-  @media (max-width: 860px){
-    .hero{grid-template-columns:1fr; gap:40px; padding-top:48px;}
-    .feature-grid{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:repeat(3,1fr);}
-  }
-  @media (max-width: 560px){
-    .gallery-grid{grid-template-columns:1fr 1fr;}
-    .nav-cta{padding:8px 14px; font-size:13px;}
-    section{padding:60px 20px;}
-  }
 </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="brand">
-      <span class="brand-mark">W</span>
-      Washu Tic Tac Toe Pro
-    </div>
+    <div class="brand"><span class="brand-mark">W</span> Washu Tic Tac Toe Pro</div>
     <a href="#download" class="nav-cta">Download</a>
   </nav>
 </header>
@@ -230,14 +95,10 @@
     <h1>Three in a row.<br><span class="hl">Zero room</span> for error.</h1>
     <p class="tagline">Washu Tic Tac Toe Pro turns the game you know into a sharp, satisfying duel against a mascot who never stops thinking one move ahead.</p>
     <div class="cta-row">
-      <a href="#download" id="download" class="btn-primary">
-        Download Now
-      </a>
+      <a href="#download" id="download" class="btn-primary">Download Now</a>
       <a href="#gallery" class="btn-secondary">See Screenshots</a>
     </div>
-    <p class="store-note">Free to play · No account required to start</p>
   </div>
-
   <div class="board-stage">
     <div class="board-card">
       <div class="board" id="heroBoard">
@@ -256,102 +117,20 @@
   </div>
 </section>
 
-<section class="features">
-  <div class="section-head">
-    <span class="eyebrow">Why players stay</span>
-    <h2>Familiar game. Unfamiliar depth.</h2>
-    <p>Every match is built to be quick to learn and genuinely hard to master.</p>
-  </div>
-  <div class="feature-grid">
-    <div class="feature">
-      <div class="num">01</div>
-      <h3>An opponent with real personality</h3>
-      <p>Washu adapts to your patterns across four difficulty tiers, from relaxed practice to a merciless endgame solver.</p>
-    </div>
-    <div class="feature">
-      <div class="num">02</div>
-      <h3>Pass-and-play multiplayer</h3>
-      <p>Challenge a friend on the same device, or queue up for quick online matches when you want fresh competition.</p>
-    </div>
-    <div class="feature">
-      <div class="num">03</div>
-      <h3>Boards worth collecting</h3>
-      <p>Unlock hand-crafted grid themes and mark styles as you climb the rank ladder, each with its own subtle animations.</p>
-    </div>
-  </div>
-</section>
-
-<section class="about-wrap">
-  <div class="section-head">
-    <span class="eyebrow">About the game</span>
-    <h2>The classic, sharpened</h2>
-  </div>
-  <div class="about">
-    <p>Washu Tic Tac Toe Pro keeps the three-by-three grid you grew up with, but wraps it in fast, tactile rounds designed for a phone in your hand. Every game is a short, tense back-and-forth where a single misplaced mark decides the outcome, so no two sessions feel like padding. Climb through Washu's difficulty tiers, track your win streak, and unlock new boards as proof of every hard-fought draw and victory.</p>
-  </div>
-</section>
-
 <section id="gallery">
-  <div class="section-head">
-    <span class="eyebrow">Gallery</span>
-    <h2>A closer look</h2>
-    <p>Drop in your own screenshots here before shipping the page.</p>
-  </div>
+  <div class="section-head"><h2>A closer look</h2></div>
   <div class="gallery-grid">
-    <div class="shot"><div class="ph-icon">1</div>Screenshot placeholder</div>
-    <div class="shot"><div class="ph-icon">2</div>Screenshot placeholder</div>
-    <div class="shot"><div class="ph-icon">3</div>Screenshot placeholder</div>
+    <div class="shot"><img src="shot1.png" alt="Washu Gameplay 1"></div>
+    <div class="shot"><img src="shot2.png" alt="Washu Gameplay 2"></div>
+    <div class="shot"><img src="shot3.png" alt="Washu Gameplay 3"></div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="brand">
-        <span class="brand-mark">W</span>
-        Washu Tic Tac Toe Pro
-      </div>
-      <p>An indie game made with a genuine love for the humble tic-tac-toe grid.</p>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <a href="#" target="_blank" rel="noopener">Twitter / X</a>
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">TikTok</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:hello@washugames.com">hello@washugames.com</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Washu Games. All rights reserved.</span>
-    <span>Made independently, played competitively.</span>
-  </div>
-</footer>
 
 <script>
-  // Self-playing tic-tac-toe demo loop for the hero board
   (function(){
     const cells = Array.from(document.querySelectorAll('#heroBoard .cell'));
-    // A sequence that ends in a clean diagonal win for X
-    const sequence = [
-      {i:0, p:'x'}, {i:4, p:'o'}, {i:1, p:'x'},
-      {i:5, p:'o'}, {i:8, p:'x'} // 0,4,8 diagonal win
-    ];
+    const sequence = [{i:0,p:'x'},{i:4,p:'o'},{i:1,p:'x'},{i:5,p:'o'},{i:8,p:'x'}];
     let step = 0;
-    let resetTimeout;
-
-    function clearBoard(){
-      cells.forEach(c => {
-        const mark = c.querySelector('.mark');
-        mark.classList.remove('show', 'x', 'o');
-        mark.textContent = '';
-      });
-    }
-
     function playStep(){
       if(step < sequence.length){
         const {i, p} = sequence[step];
@@ -361,14 +140,13 @@
         step++;
         setTimeout(playStep, 700);
       } else {
-        resetTimeout = setTimeout(() => {
-          clearBoard();
+        setTimeout(() => {
+          cells.forEach(c => c.querySelector('.mark').classList.remove('show', 'x', 'o'));
           step = 0;
-          setTimeout(playStep, 600);
+          playStep();
         }, 1600);
       }
     }
-
     playStep();
   })();
 </script>
