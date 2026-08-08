@@ -3,9 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Search Console Verification (Preserved) -->
 <meta name="google-site-verification" content="urSeI1w_QkGeifpeLc75daYXGAlHz_QcLh8-0cdsFyk" />
-<title>Washu Tic Tac Toe Pro — Outsmart the Grid</title>
-<meta name="description" content="Washu Tic Tac Toe Pro is a strategic game created by Washu Bhardwaj. Fast, free, and competitive. Challenge yourself with intelligent AI or play against friends.">
+
+<!-- SEO Meta Tags for High Google Ranking -->
+<title>Play Washu Tic Tac Toe Pro Online — Best 2-Player Game with Friends</title>
+<meta name="description" content="Play Washu Tic Tac Toe Pro online with friends! Features quick in-game chat messages, 2-player multiplayer, local pass-and-play, and adaptive AI by Washu Bhardwaj. Fast, free, and competitive.">
+<meta name="keywords" content="Tic Tac Toe online with friends, best online Tic Tac Toe game, play Tic Tac Toe 2 player, Tic Tac Toe puzzle game online, Tic Tac Toe with quick chat, Washu Tic Tac Toe Pro, Washu Bhardwaj">
+<meta name="author" content="Washu Bhardwaj">
+
+<!-- Open Graph / Social Sharing (WhatsApp, Discord, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Washu Tic Tac Toe Pro — Play Online with Friends">
+<meta property="og:description" content="Challenge friends online with quick in-game messages or test your strategy against adaptive AI. Play free on Android & Web!">
+<meta property="og:url" content="https://chimerical-treacle-f08893.netlify.app/">
+<meta property="og:image" content="shot1.png">
+
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Washu Tic Tac Toe Pro — Play Online with Friends">
+<meta name="twitter:description" content="Fast 2-player online Tic Tac Toe puzzle game with in-game quick chat presets and smart AI.">
+<meta name="twitter:image" content="shot1.png">
 
 <!-- JSON-LD Structured Data for Google Search -->
 <script type="application/ld+json">
@@ -17,8 +36,14 @@
     "@type": "Person",
     "name": "Washu Bhardwaj"
   },
-  "description": "An original, modern, web-based Tic Tac Toe strategy game created by Washu Bhardwaj.",
-  "applicationCategory": "Game"
+  "description": "An original, modern 2-player online Tic Tac Toe puzzle game created by Washu Bhardwaj featuring quick in-game chat messages and adaptive AI.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Android, Web, Windows, macOS",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 
@@ -190,17 +215,17 @@
   .features{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .feature-grid{
     max-width:var(--max); margin:0 auto;
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
   }
   .feature{
-    background:var(--panel-2); border:1px solid var(--line); border-radius:16px; padding:28px;
+    background:var(--panel-2); border:1px solid var(--line); border-radius:16px; padding:24px;
   }
   .feature .num{
     font-family:'Space Grotesk', sans-serif; font-size:13px; font-weight:700;
     color:var(--gold); margin-bottom:14px; letter-spacing:0.06em;
   }
-  .feature h3{font-size:19px; margin-bottom:10px;}
-  .feature p{color:var(--muted); font-size:15px;}
+  .feature h3{font-size:18px; margin-bottom:10px;}
+  .feature p{color:var(--muted); font-size:14px;}
 
   /* Developer & About */
   .about-container{max-width:760px; margin:0 auto; text-align:center;}
@@ -240,13 +265,16 @@
     color:var(--muted); font-size:13px;
   }
 
+  @media (max-width: 960px){
+    .feature-grid{grid-template-columns:repeat(2,1fr);}
+  }
   @media (max-width: 860px){
     .hero{grid-template-columns:1fr; gap:40px; padding-top:48px;}
-    .feature-grid{grid-template-columns:1fr;}
     .gallery-grid{grid-template-columns:repeat(3,1fr);}
     .download-grid{grid-template-columns:1fr;}
   }
   @media (max-width: 560px){
+    .feature-grid{grid-template-columns:1fr;}
     .gallery-grid{grid-template-columns:1fr 1fr;}
     .nav-cta{padding:8px 14px; font-size:13px;}
     section{padding:60px 20px;}
@@ -261,22 +289,22 @@
       <span class="brand-mark">W</span>
       Washu Tic Tac Toe Pro
     </div>
-    <a href="#download" class="nav-cta">Download</a>
+    <a href="#download" class="nav-cta">Play Now</a>
   </nav>
 </header>
 
 <section class="hero">
   <div>
-    <span class="eyebrow">Now on Android & PC</span>
-    <h1>Three in a row.<br><span class="hl">Zero room</span> for error.</h1>
-    <p class="tagline">Washu Tic Tac Toe Pro turns the game you know into a sharp, satisfying duel against a mascot who never stops thinking one move ahead.</p>
+    <span class="eyebrow">Play Online with Friends & AI</span>
+    <h1>The Ultimate Online <br><span class="hl">Tic Tac Toe</span> Puzzle Duel.</h1>
+    <p class="tagline">Challenge your friends in real-time 2-player online matches with quick in-game messages, or outsmart an adaptive AI that plans every move ahead.</p>
     <div class="cta-row">
       <a href="#download" class="btn-primary">
-        Download Now
+        Play Online Free
       </a>
-      <a href="#gallery" class="btn-secondary">See Screenshots</a>
+      <a href="#gallery" class="btn-secondary">See Gameplay</a>
     </div>
-    <p class="store-note">Free to play · No account required to start</p>
+    <p class="store-note">Free to play · Android & Browser · No registration needed</p>
   </div>
 
   <div class="board-stage">
@@ -292,7 +320,7 @@
         <div class="cell" data-i="7"><span class="mark"></span></div>
         <div class="cell" data-i="8"><span class="mark"></span></div>
       </div>
-      <p class="board-caption">Live demo: watch <b>Washu</b> play itself</p>
+      <p class="board-caption">Live preview: <b>Washu AI</b> in action</p>
     </div>
   </div>
 </section>
@@ -300,46 +328,51 @@
 <section id="download" class="download-section">
   <div class="section-head">
     <span class="eyebrow">Get the game</span>
-    <h2>Play on Android or PC</h2>
-    <p>Same game, two ways to play. Pick whichever fits your device.</p>
+    <h2>Play on Android or PC Web Browser</h2>
+    <p>Jump straight into 2-player online battles or single-player matches anytime.</p>
   </div>
   <div class="download-grid">
     <div class="download-card">
       <div class="icon">📱</div>
       <h3>Download for Android</h3>
-      <p>Install the APK on your Android phone or tablet.</p>
+      <p>Install the free APK on your Android phone or tablet for on-the-go duels.</p>
       <a href="washu-tic-tac-toe.apk" download class="btn-primary">Download APK</a>
     </div>
     <div class="download-card">
       <div class="icon">💻</div>
-      <h3>Open in PC</h3>
-      <p>Play instantly in your browser — no install needed.</p>
-      <a href="https://chimerical-treacle-f08893.netlify.app/" target="_blank" rel="noopener" class="btn-secondary">Open in Browser</a>
+      <h3>Play Online in Browser</h3>
+      <p>Play instantly with friends on PC or mobile browser — no install needed.</p>
+      <a href="https://chimerical-treacle-f08893.netlify.app/" target="_blank" rel="noopener" class="btn-secondary">Play in Browser</a>
     </div>
   </div>
 </section>
 
 <section class="features">
   <div class="section-head">
-    <span class="eyebrow">Why players stay</span>
-    <h2>Familiar game. Unfamiliar depth.</h2>
-    <p>Every match is built to be quick to learn and genuinely hard to master.</p>
+    <span class="eyebrow">Why players love it</span>
+    <h2>Built for Online Play & Tactical Strategy</h2>
+    <p>Every match brings fast-paced puzzle gameplay designed for friendly competition.</p>
   </div>
   <div class="feature-grid">
     <div class="feature">
       <div class="num">01</div>
-      <h3>An opponent with real personality</h3>
-      <p>Washu adapts to your patterns across four difficulty tiers, from relaxed practice to a merciless endgame solver.</p>
+      <h3>In-Game Quick Messages</h3>
+      <p>Send quick reaction messages and preset chats during online matches to celebrate victories and banter with friends.</p>
     </div>
     <div class="feature">
       <div class="num">02</div>
-      <h3>Pass-and-play multiplayer</h3>
-      <p>Challenge a friend on the same device, or queue up for quick online matches when you want fresh competition.</p>
+      <h3>Play with Friends Online</h3>
+      <p>Jump into 2-player multiplayer matches online or challenge friends on the same phone via local pass-and-play.</p>
     </div>
     <div class="feature">
       <div class="num">03</div>
-      <h3>Boards worth collecting</h3>
-      <p>Unlock hand-crafted grid themes and mark styles as you climb the rank ladder, each with its own subtle animations.</p>
+      <h3>Smart Adaptive AI</h3>
+      <p>Test your strategy against Washu AI across four difficulty tiers, from casual practice to a true strategy solver.</p>
+    </div>
+    <div class="feature">
+      <div class="num">04</div>
+      <h3>Custom Grid Themes</h3>
+      <p>Unlock hand-crafted board themes, smooth animations, and custom X & O mark styles as you climb win streaks.</p>
     </div>
   </div>
 </section>
@@ -347,23 +380,23 @@
 <section>
   <div class="section-head">
     <span class="eyebrow">About the developer</span>
-    <h2>The classic, sharpened</h2>
+    <h2>Designed by Washu Bhardwaj</h2>
   </div>
   <div class="about-container">
-    <p><strong>Washu Tic Tac Toe Pro</strong> is an original strategy game developed by <strong>Washu Bhardwaj</strong> in 2026. This project is a completely independent game and is not affiliated with any university or educational institution.</p>
-    <p>The game keeps the three-by-three grid you grew up with, but wraps it in fast, tactile rounds designed for a phone in your hand. Every game is a short, tense back-and-forth where a single misplaced mark decides the outcome. Climb through difficulty tiers, track your win streak, and unlock new boards as proof of every victory.</p>
+    <p><strong>Washu Tic Tac Toe Pro</strong> is a free, modern strategy game developed by indie game developer <strong>Washu Bhardwaj</strong> in 2026.</p>
+    <p>Reimagining the classic $3 \times 3$ grid, this game brings competitive online matchmaking, in-game quick messaging, and deep AI difficulty levels into a sleek, fast-paced puzzle experience. Whether you want a quick 2-minute brain break or a tense online duel with a friend, Washu Tic Tac Toe Pro delivers a sharp, clean gaming experience on both Android and Web.</p>
   </div>
 </section>
 
 <section id="gallery">
   <div class="section-head">
     <span class="eyebrow">Gallery</span>
-    <h2>A closer look</h2>
+    <h2>A closer look at the gameplay</h2>
   </div>
   <div class="gallery-grid">
-    <div class="shot"><img src="shot1.png" alt="Washu Tic Tac Toe Gameplay 1"></div>
-    <div class="shot"><img src="shot2.png" alt="Washu Tic Tac Toe Gameplay 2"></div>
-    <div class="shot"><img src="shot3.png" alt="Washu Tic Tac Toe Gameplay 3"></div>
+    <div class="shot"><img src="shot1.png" alt="Washu Tic Tac Toe Pro Online Gameplay"></div>
+    <div class="shot"><img src="shot2.png" alt="In-game quick messages and AI match preview"></div>
+    <div class="shot"><img src="shot3.png" alt="Multiplayer 2 player board customizer"></div>
   </div>
 </section>
 
@@ -374,7 +407,7 @@
         <span class="brand-mark">W</span>
         Washu Tic Tac Toe Pro
       </div>
-      <p>An indie game made with a genuine love for the humble tic-tac-toe grid.</p>
+      <p>The ultimate online 2-player Tic Tac Toe game. Play with friends online or challenge adaptive AI.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -390,7 +423,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Washu Games. All rights reserved.</span>
+    <span>© 2026 Washu Games. Developed by Washu Bhardwaj. All rights reserved.</span>
     <span>Made independently, played competitively.</span>
   </div>
 </footer>
@@ -431,4 +464,5 @@
 </script>
 
 </body>
-</html>
+        </html>
+        
